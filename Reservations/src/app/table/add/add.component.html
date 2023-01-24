@@ -1,0 +1,51 @@
+<form [formGroup]="add">
+
+    <mat-form-field appearance="outline">
+        <mat-label>SlNo</mat-label>
+        <input formControlName="SlNo" matInput placeholder="SlNo">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Choose Hotel</mat-label>
+        <mat-select  formControlName="Hotel" >
+          <mat-option value="Marriott">Marriott</mat-option>
+          <mat-option value="Gopal">Gopal</mat-option>
+          <mat-option value="James">James</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Arrival</mat-label>
+        <input formControlName="Arrival" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="Type">
+          <mat-option value="Luxury Suite">Luxury Suite</mat-option>
+          <mat-option value="Suite">Suite</mat-option>
+          <mat-option value="Double">Double</mat-option>
+          <mat-option value="Economy">Economy</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label> Departure</mat-label>
+        <input formControlName="Departure" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Guests</mat-label>
+        <input formControlName="Guests" matInput placeholder="Guests">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>price</mat-label>
+        <input formControlName="price"  matInput placeholder="price">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+ </form>
+ <button (click)="save()" class="save" mat-button >{{abc}}</button>&nbsp;&nbsp;&nbsp;
+ <button class="close" mat-button mat-dialog-close>Close</button>
+            

@@ -1,0 +1,9 @@
+mat-form-field{
+    width: 100%;
+}
+.save{
+    background-color:rgb(21, 116, 21);
+}
+.close{
+    background-color: rgb(137, 43, 43);
+}
