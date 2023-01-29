@@ -27,14 +27,14 @@ export class DataService {
 
   addData(data:any)
   {
-    return this.http.post('https://localhost:44393/api/R/insert/',data).subscribe();
+    return this.http.post('https://localhost:44393/api/R/insert/',data,this.httpOptions).subscribe();
   }
   update(data:any){
-    return this.http.put('https://localhost:44393/update/',data).subscribe();
+    return this.http.put('https://localhost:44393/update/',data,this.httpOptions).subscribe();
   }
 
   deleteData(SlNo:number){
-    return this.http.delete("https://localhost:44393/delete/"+SlNo).subscribe();
+    return this.http.delete('https://localhost:44393/delete/'+SlNo);
   }
   
 }

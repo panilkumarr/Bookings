@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatNativeDateModule,
     DialogModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

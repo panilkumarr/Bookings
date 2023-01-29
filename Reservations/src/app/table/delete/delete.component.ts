@@ -15,17 +15,34 @@ export class DeleteComponent implements OnInit {
   }
   onNo()
 {
+  setTimeout(
+    function()
+    {
+      location.reload();
+    },1000);
+  
 
 }
 onOk()
   {
-    console.log(this.data)
-    this.ds.deleteData(this.data.SlNo);
-    //window.location.reload();
-    setTimeout(function(){
-      location.reload();
-    },1000);
-    console.log("ok");
+    // console.log(this.data)
+    // this.ds.deleteData(this.data.SlNo);
+    // //window.location.reload();
+    // setTimeout(function(){
+    //   location.reload();
+    // },1000);
+    // console.log("ok");
+    
+    // window.location.reload();
+    this.data.patchValue({
+      SlNo:this.data.SlNo
+    })
+    this.ds.deleteData(this.data.SlNo).subscribe();
+    setTimeout(
+     function()
+     {
+       location.reload();
+     },1000);
   }
 
 

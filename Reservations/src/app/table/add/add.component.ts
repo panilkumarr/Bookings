@@ -5,6 +5,7 @@ import { DataService } from 'src/app/service/data.service';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SafeValue } from '@angular/platform-browser';
+import { Serializer } from '@angular/compiler';
 
 @Component({
   selector: 'app-add',
@@ -51,20 +52,37 @@ export class AddComponent implements OnInit {
     this.route.navigate(['table'])
   }
   update(){
-    this.ds.update(this.add.value);
-    window.location.reload();
-    this.dialogRef.close();
-    window.location.reload();
-    this.table();
+    // this.ds.update(this.add.value);
+    // window.location.reload();
+    // this.dialogRef.close();
+    // window.location.reload();
+    // this.table();
+    let ser=JSON.stringify(this.add.value)
+    this.ds.update(ser)
+    setTimeout(
+      function()
+      {
+        location.reload();
+      },1000);
+      this.table();
   }
 
 save() {
   if(!this.data){
-    this.ds.addData(this.add.value);
-    window.location.reload();
-    this.dialogRef.close();
-    window.location.reload();
-    this.table();
+    // this.ds.addData(this.add.value);
+    // window.location.reload();
+    // this.dialogRef.close();
+    // window.location.reload();
+    // this.table();
+    console.log(Serializer)
+    let ser=JSON.stringify(this.add.value)
+    this.ds.addData(ser)
+    setTimeout(
+      function()
+      {
+        location.reload();
+      },1000);
+      this.table();
   }
  else{
   this.update();
